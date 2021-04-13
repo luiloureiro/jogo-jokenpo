@@ -16,6 +16,11 @@
         
         #principal {}
         
+        #titulo {
+            text-align: center;
+            color: 2d3436;
+        }
+        
         #placar {
             display: flex;
             align-items: center;
@@ -37,12 +42,16 @@
         }
         
         #jogador {
-            background-color: #e74c3c;
+            background-color: #ff7675;
         }
         
         #jogador-nome,
         #computador-nome {
             font-size: 24px;
+        }
+        
+        #computador-nome {
+            text-align: right;
         }
         
         #jogador-pontos,
@@ -55,14 +64,16 @@
             right: 20px;
         }
         
-        #jogador-escolha {
+        #jogador #jogador-escolha,
+        #computador #computador-escolha {
             text-align: center;
             list-style: none;
-            margin: 0;
+            margin: 30px 0 0;
             padding: 0;
         }
         
-        #jogador-escolha li {
+        #jogador #jogador-escolha li,
+        #computador #computador-escolha li {
             display: inline;
             padding: 0 15px;
         }
@@ -75,23 +86,42 @@
             opacity: 1;
         }
         
+        #computador-escolha a {
+            opacity: .2;
+        }
+        
+        #computador-escolha a:hover {
+            opacity: 1;
+        }
+        
         #jogador-escolha img {
             max-width: 80px;
         }
         
-        #versus {}
+        #versus {
+            font-size: 80px;
+            padding: 0 40px;
+        }
         
         #computador {
             background-color: #3498db;
         }
         
-        #mensagem {}
+        #mensagem {
+            background-color: #636e72;
+            color: #fff;
+            border-radius: 5px;
+            font-size: 24px;
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+        }
     </style>
 </head>
 
 <body>
     <div id="principal">
-        <h1>Pedra, papel e tesoura!</h1>
+        <h1 id="titulo">Pedra, papel e tesoura!</h1>
 
         <div id="placar">
             <div id="jogador">
@@ -106,7 +136,17 @@
                 </ul>
             </div>
             <div id="versus">VS</div>
-            <div id="computador">computador</div>
+            <div id="computador">
+                <h2 id="computador-nome">Computador</h2>
+                <span id="computador-pontos">0</span>
+                <ul id="computador-escolha">
+                    <li>
+                        <a href="" id="computador-escolha-1"><img src="pedra.png" alt="imagem pedra"></a>
+                        <a href="" id="computador-escolha-2"><img src="papel.png" alt="imagem pedra"></a>
+                        <a href="" id="computador-escolha-3"><img src="tesoura.png" alt="imagem pedra"></a>
+                    </li>
+                </ul>
+            </div>
         </div>
         <div id="mensagem">mensagem</div>
     </div>
