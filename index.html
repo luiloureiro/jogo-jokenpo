@@ -8,30 +8,84 @@
     <title>Jogo Jokenpo</title>
 
     <style>
-        #principal {
-            border: 1px solid red;
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 400;
+            cursor: default;
         }
         
+        #principal {}
+        
         #placar {
-            border: 1px solid blue;
             display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #jogador,
+        #computador {
+            flex-grow: 1;
+            border-radius: 5px;
+            color: #fff;
+            padding: 20px;
+        }
+        
+        #jogador h2,
+        #computador h2 {
+            margin: 0;
+            padding: 0;
         }
         
         #jogador {
-            background-color: red;
+            background-color: #e74c3c;
         }
         
-        #versus {
-            background-color: blue;
+        #jogador-nome,
+        #computador-nome {
+            font-size: 24px;
         }
+        
+        #jogador-pontos,
+        #computador-pontos {
+            position: absolute;
+            font-size: 52px;
+        }
+        
+        #jogador-pontos {
+            right: 20px;
+        }
+        
+        #jogador-escolha {
+            text-align: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        #jogador-escolha li {
+            display: inline;
+            padding: 0 15px;
+        }
+        
+        #jogador-escolha a {
+            opacity: .2;
+        }
+        
+        #jogador-escolha a:hover {
+            opacity: 1;
+        }
+        
+        #jogador-escolha img {
+            max-width: 80px;
+        }
+        
+        #versus {}
         
         #computador {
-            background-color: green;
+            background-color: #3498db;
         }
         
-        #mensagem {
-            border: 1px solid green;
-        }
+        #mensagem {}
     </style>
 </head>
 
@@ -40,7 +94,17 @@
         <h1>Pedra, papel e tesoura!</h1>
 
         <div id="placar">
-            <div id="jogador">Jogador</div>
+            <div id="jogador">
+                <H2 id="jogador-nome">Player 1</H2>
+                <span id="jogador-pontos">0</span>
+                <ul id="jogador-escolha">
+                    <li>
+                        <a href="" id="jogador-escolha-1"><img src="pedra.png" alt="imagem pedra"></a>
+                        <a href="" id="jogador-escolha-2"><img src="papel.png" alt="imagem pedra"></a>
+                        <a href="" id="jogador-escolha-3"><img src="tesoura.png" alt="imagem pedra"></a>
+                    </li>
+                </ul>
+            </div>
             <div id="versus">VS</div>
             <div id="computador">computador</div>
         </div>
